@@ -1,11 +1,11 @@
 :root {
-  --clr1: #4557BF;
+  /* --clr1: #4557BF;
   --clr2: #D9A59A;
-  --clr3: #626973;
-  
+  --clr3: #626973; */
+
   --clr1bg: #6C7DD9;
   --clr1bg-light: #718BD9;
-  --clr2bg: #d5aca3;
+  --clr2bg: #c4762B;
   --clr2bg-light: #dfc2bb;
   /* --clr3bg-light: #9aa4b1; */
   --clr3bg-light: #b2bbc8c9;
@@ -14,4 +14,16 @@
   --gray2: rgb(155, 155, 155);
   --gray3: rgb(44, 44, 44);
 
-} 
+  --karry: #ffebd2;
+  --atomic: #FFA364;
+  --pickled: #273248;
+
+  --clr1: #2E3D50;
+  --clr2: #f0e6d1;
+  --clr3: #c4762B;
+
+  --clr4: #2E3D50;
+  --clr5: #f0e6d1;
+  --clr6: #c4762B;
+
+}

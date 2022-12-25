@@ -5,3 +5,8 @@
     align-items: center;
     justify-content: center;
 }
+
+.home img {
+    width: 100%;
+    max-width: 500px;
+}

@@ -1,7 +1,7 @@
+import { LongTxt } from "../assets/style/cmps/long-txt.jsx"
 import { BookDate } from "./book-date.jsx"
 import { BookPrice } from "./book-price.jsx"
 import { PageCountReading } from "./page-count.jsx"
-
 
 export function BookDetails({ book, onGoBack }) {
     const { title, subtitle, authors, publishedDate, description, pageCount, categories, thumbnail, language, listPrice } = book
@@ -10,13 +10,14 @@ export function BookDetails({ book, onGoBack }) {
         <h1>{title}</h1>
         <h5>{subtitle}</h5>
         <h6>By {authors}</h6>
-        <p>{description}</p>
+        <LongTxt txt={description} length={length = 100}>
+            <p>{description}</p>
+        </LongTxt>
         <img src={thumbnail} />
-        <BookPrice listPrice={listPrice}/>
+        <BookPrice listPrice={listPrice} />
         <p>Language: {language}</p>
-        <p>Published at: {publishedDate}</p>
-        <BookDate publishedDate={publishedDate}/>
-        <PageCountReading pageCount={pageCount}/>
+        <BookDate publishedDate={publishedDate} />
+        <PageCountReading pageCount={pageCount} />
         <p>Categories:
             {categories.map(categorie => <span key={categorie}> {categorie} </span>)}
         </p>

@@ -1,17 +1,41 @@
 .app-header {
-  background-color: var(--gray3);
-  color: var(--gray1);
+  background-color: var(--clr4);
+  color: var(--clr5);
   margin-bottom: 1em;
 }
 
 .app-nav {
   display: flex;
-  padding-bottom: .5em;
-  gap: .5em;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  width: 100%;
+  margin-bottom: 3em;
 }
 
-/* @media(max-width: 720px) {
-  .app-header {
-    color: var(--clr2bg);
-  }
-} */
+.app-nav ul {
+  display: flex;
+}
+
+.app-nav li {
+  padding-inline-start: .5em;
+}
+
+.app-nav a {
+  padding: .5em;
+  border-radius: .5em;
+}
+
+.app-nav a:hover {
+  background-color: var(--clr6);
+}
+
+.app-header img {
+  width: 300px;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+.img-container {
+  text-align: right;
+}

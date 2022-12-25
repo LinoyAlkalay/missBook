@@ -8,7 +8,7 @@ html {
 
 body {
   margin: 0;
-  color: var(--gray3);
+  color: whitesmoke;
 }
 
 h1,
@@ -17,7 +17,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: .5em 0 .5em;
+  margin: 0;
 }
 
 p {
@@ -35,11 +35,6 @@ embed,
 video,
 object {
   max-width: 100%;
-}
-
-img {
-  width: 135px;
-  margin-bottom: .5em;
 }
 
 /* Simple and useful CSS Debugging Technique */

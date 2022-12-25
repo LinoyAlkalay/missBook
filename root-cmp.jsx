@@ -9,12 +9,17 @@ export function App() {
 
     return <section className="main-layout app">
         <header className="app-header full main-layout">
-            <h1>Book App</h1>
             <nav className="app-nav">
-                <a href="#" onClick={() => setPage('home')}>Home</a> | 
-                <a href="#" onClick={() => setPage('about')}>About</a> | 
-                <a href="#" onClick={() => setPage('book')}>Books</a>
+                <h1>Book App</h1>
+                <ul className="clean-list">
+                    <li><a href="#" onClick={() => setPage('home')}>Home</a></li>
+                    <li><a href="#" onClick={() => setPage('about')}>About</a></li>
+                    <li><a href="#" onClick={() => setPage('book')}>Books</a></li>
+                </ul>
             </nav>
+            <div className="img-container">
+            {/* <img src="assets/img/reading.svg" alt="reading" /> */}
+            </div>
         </header>
 
         <main>
