@@ -1,0 +1,17 @@
+.app-header {
+  background-color: var(--gray3);
+  color: var(--gray1);
+  margin-bottom: 1em;
+}
+
+.app-nav {
+  display: flex;
+  padding-bottom: .5em;
+  gap: .5em;
+}
+
+/* @media(max-width: 720px) {
+  .app-header {
+    color: var(--clr2bg);
+  }
+} */
