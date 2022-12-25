@@ -4,6 +4,7 @@
 
 .book-details {
     background-color: var(--clr3bg-light);
+    color: whitesmoke;
     padding: 1em;
     border-radius: .5em;
     display: flex;
@@ -11,3 +12,6 @@
     align-items: center;
 }
 
+.book-details img {
+    width: 200px;
+}

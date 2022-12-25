@@ -6,7 +6,6 @@ import { Home } from "./views/home.jsx";
 
 export function App() {
     const [page, setPage] = useState('book')
-    console.log('page is', page)
 
     return <section className="main-layout app">
         <header className="app-header full main-layout">

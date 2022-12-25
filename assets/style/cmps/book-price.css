@@ -1,0 +1,13 @@
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.book-price span {
+    color: var(--clr1);
+    border-radius: .5em;
+    padding: .3em;
+}
