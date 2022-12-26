@@ -28,14 +28,14 @@ export function BookFilter({ onSetFilter }) {
         <form onSubmit={onSubmitFilter}>
             <input type="text"
                 name="title"
-                placeholder="filter by book title"
+                placeholder="Book title"
                 value={filterByToEdit.title}
                 onChange={handleChange}
             />
 
             <input type="number"
                 name="price"
-                placeholder="filter by book price"
+                placeholder="Book price"
                 value={filterByToEdit.price}
                 onChange={handleChange}
             />

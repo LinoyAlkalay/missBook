@@ -1,17 +1,33 @@
-.book-details h1 {
-    font-size: 1.25rem;
-}
-
 .book-details {
-    background-color: var(--clr3bg-light);
-    color: whitesmoke;
-    padding: 1em;
+    background-color: var(--gray2);
     border-radius: .5em;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .book-details img {
-    width: 200px;
+    width: 100%;
+    border-top-left-radius: .5em;
+    border-bottom-left-radius: .5em;
+}
+
+.book-content {
+    padding: 1em;
+}
+
+.book-content h1 {
+    font-size: 1.25rem;
+    margin-bottom: 1em;
+}
+
+.book-content h5, h6 {
+    margin-bottom: 1em;
+}
+
+.book-content button {
+    padding: 1em;
+    border-radius: .5em;
 }

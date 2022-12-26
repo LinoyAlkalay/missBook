@@ -20,10 +20,8 @@
     background-color: var(--gray1);
 }
 
-.book-list img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-top-left-radius: .5em;
-    border-top-right-radius: .5em;
+.book-list button {
+    border-radius: .5em;
+    margin: .5em;
+    margin-bottom: 1em;
 }

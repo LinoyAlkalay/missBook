@@ -1,10 +1,9 @@
 
 export function BookPreview({ book }) {
-const {title, thumbnail, description, listPrice} = book
-    return <article className="car-preview">
+const {title, thumbnail, authors, listPrice} = book
+    return <article className="book-preview">
         <img src={thumbnail} />
-        <h2>{title}</h2>
-        <p>{description}</p>
-        <p>Price: {listPrice.amount} {listPrice.currencyCode}</p>
+        <h2><span>{title}</span><span>{listPrice.amount} {listPrice.currencyCode}</span></h2>
+        <p>{authors}</p>
     </article>
 }
