@@ -26,7 +26,7 @@ export function BookIndex() {
     function onSetFilter(filterByFromFilter) {
         setFilterBy(filterByFromFilter)
     }
- 
+
     function onRemoveBook(bookId) {
         bookService.remove(bookId).then(() => {
             const updatedBooks = books.filter(book => book.id !== bookId)
@@ -50,10 +50,12 @@ export function BookIndex() {
 
     return <section className="book-index">
         {userMsg && <UserMsg msg={userMsg} />}
-        {!selectedBook && <div>
+        {!selectedBook && <div className="main-layout">
             <BookFilter onSetFilter={onSetFilter} />
-            <BookList books={books} onRemoveBook={onRemoveBook} onSelectBook={onSelectBook} />
-            </div>}    
+            <div className="book-container main-layout full">
+                <BookList books={books} onRemoveBook={onRemoveBook} onSelectBook={onSelectBook} />
+            </div>
+        </div>}
         {selectedBook && <div>
             <BookDetails book={selectedBook}
                 onGoBack={() => setSelectedBook(null)} />

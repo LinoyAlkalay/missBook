@@ -1,3 +1,29 @@
 .book-filter form {
     margin-bottom: 1em;
 }
+
+.book-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.book-filter img {
+    width: 25rem;
+}
+
+.book-filter input:first-child {
+    border-bottom-left-radius: .5em;
+    border-top-left-radius: .5em;
+}
+
+.book-filter input {
+    font-size: 1.1rem;
+}
+
+.book-filter button {
+    font-size: 1.1rem;
+    border-bottom-right-radius: .5em;
+    border-top-right-radius: .5em;
+}

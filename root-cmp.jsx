@@ -7,7 +7,7 @@ import { Home } from "./views/home.jsx";
 export function App() {
     const [page, setPage] = useState('book')
 
-    return <section className="main-layout app">
+    return <section className="app">
         <header className="app-header full main-layout">
             <nav className="app-nav">
                 <h1>Book App</h1>
@@ -17,9 +17,6 @@ export function App() {
                     <li><a href="#" onClick={() => setPage('book')}>Books</a></li>
                 </ul>
             </nav>
-            <div className="img-container">
-            {/* <img src="assets/img/reading.svg" alt="reading" /> */}
-            </div>
         </header>
 
         <main>

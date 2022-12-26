@@ -1,16 +1,14 @@
 .app-header {
-  background-color: var(--clr4);
-  color: var(--clr5);
   margin-bottom: 1em;
 }
 
 .app-nav {
+  font-size: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1em;
-  width: 100%;
-  margin-bottom: 3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .app-nav ul {
@@ -24,18 +22,10 @@
 .app-nav a {
   padding: .5em;
   border-radius: .5em;
+
+  transition: color .6s;
 }
 
 .app-nav a:hover {
-  background-color: var(--clr6);
-}
-
-.app-header img {
-  width: 300px;
-  padding: 1em;
-  margin-bottom: 2em;
-}
-
-.img-container {
-  text-align: right;
+  color: var(--clr4);
 }

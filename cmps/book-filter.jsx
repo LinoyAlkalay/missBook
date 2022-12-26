@@ -42,6 +42,6 @@ export function BookFilter({ onSetFilter }) {
 
             <button>Filter books!</button>
         </form>
-
+        <img src="assets/img/1.jpg" alt="reading" />
     </section>
 }
