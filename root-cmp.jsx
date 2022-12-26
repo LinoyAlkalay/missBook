@@ -1,28 +1,33 @@
-const { useState } = React
+const Router = ReactRouterDOM.HashRouter
+const { Route, Routes } = ReactRouterDOM
 
-import { About } from "./views/about.jsx";
-import { BookIndex } from "./views/book-index.jsx";
-import { Home } from "./views/home.jsx";
+import { AppHeader } from "./cmps/app-header.jsx"
+import { BookDetails } from "./views/book-details.jsx"
+import { BookEdit } from "./views/book-edit.jsx"
+import { About } from "./views/about.jsx"
+import { BookIndex } from "./views/book-index.jsx"
+import { Home } from "./views/home.jsx"
+import { UserMsg } from './cmps/user-msg.jsx'
 
 export function App() {
-    const [page, setPage] = useState('book')
 
-    return <section className="app">
-        <header className="app-header full main-layout">
-            <nav className="app-nav">
-                <h1>Book App</h1>
-                <ul className="clean-list">
-                    <li><a href="#" onClick={() => setPage('home')}>Home</a></li>
-                    <li><a href="#" onClick={() => setPage('about')}>About</a></li>
-                    <li><a href="#" onClick={() => setPage('book')}>Books</a></li>
-                </ul>
-            </nav>
-        </header>
+    return <Router>
+        <section className="app">
+            <AppHeader />
 
-        <main>
-            {page === 'home' && <Home />}
-            {page === 'about' && <About />}
-            {page === 'book' && <BookIndex />}
-        </main>
-    </section>
+            <main>
+                <Routes>
+                    <Route element={<Home />} path="/" />
+                    <Route element={<About />} path="/about" />
+
+                    <Route element={<BookIndex />} path="/book" />
+                    <Route element={<BookEdit />} path="/book/edit" />
+                    <Route element={<BookEdit />} path="/book/edit/:bookId" />
+                    <Route element={<BookDetails />} path="/book/:bookId" />
+                </Routes>
+            </main>
+
+            <UserMsg />
+        </section>
+    </Router>
 }

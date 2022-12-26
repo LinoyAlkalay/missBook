@@ -1,31 +1,27 @@
-.app-header {
-  margin-bottom: 1em;
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .app-nav {
   font-size: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding-top: 1em;
   padding-bottom: 1em;
-}
-
-.app-nav ul {
-  display: flex;
-}
-
-.app-nav li {
-  padding-inline-start: .5em;
 }
 
 .app-nav a {
   padding: .5em;
   border-radius: .5em;
+  cursor: pointer;
 
   transition: color .6s;
 }
 
 .app-nav a:hover {
+  color: var(--clr4);
+}
+
+.app-nav a.active {
   color: var(--clr4);
 }
