@@ -4,6 +4,7 @@ const { Route, Routes } = ReactRouterDOM
 import { AppHeader } from "./cmps/app-header.jsx"
 import { BookDetails } from "./views/book-details.jsx"
 import { BookEdit } from "./views/book-edit.jsx"
+import { BookReview } from "./views/book-review.jsx"
 import { About } from "./views/about.jsx"
 import { BookIndex } from "./views/book-index.jsx"
 import { Home } from "./views/home.jsx"
@@ -24,6 +25,7 @@ export function App() {
                     <Route element={<BookEdit />} path="/book/edit" />
                     <Route element={<BookEdit />} path="/book/edit/:bookId" />
                     <Route element={<BookDetails />} path="/book/:bookId" />
+                    <Route element={<BookReview />} path="/book/:bookId/review" />
                 </Routes>
             </main>
 

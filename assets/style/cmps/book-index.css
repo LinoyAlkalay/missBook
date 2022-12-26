@@ -1,0 +1,22 @@
+.book-index a {
+    border-radius: .5em;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--clr4);
+    border: 0;
+    padding: .5em;
+    color: whitesmoke;
+    margin: 0 .5em 0 .5em;
+}
+
+.book-index a:first-child {
+    margin: 0;
+    margin-top: 1em;
+    display: inline-block;
+}
+
+.book-index a:hover {
+    transition: .3s;
+    background-color: var(--clr1);
+    cursor: pointer;
+}

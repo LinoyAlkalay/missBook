@@ -21,7 +21,10 @@
 }
 
 .book-list button {
+    margin: 0 .5em 0 .5em;
     border-radius: .5em;
-    margin: .5em;
+}
+
+.book-list div {
     margin-bottom: 1em;
 }

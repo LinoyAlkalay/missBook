@@ -2,12 +2,13 @@ const { useState, useEffect } = React
 const { useNavigate, useParams, Link } = ReactRouterDOM
 
 import { bookService } from "../services/book.service.js"
-import { eventBusService, showSuccessMsg } from "../services/event-bus.service.js"
+import { showSuccessMsg } from "../services/event-bus.service.js"
 
 export function BookEdit() {
     const [bookToEdit, setBookToEdit] = useState(bookService.getEmptyBook())
     const navigate = useNavigate()
     const { bookId } = useParams()
+    console.log('bookToEdit:', bookToEdit)
 
     useEffect(() => {
         if (!bookId) return
@@ -32,7 +33,6 @@ export function BookEdit() {
     function onSaveBook(ev) {
         ev.preventDefault()
         bookService.save(bookToEdit).then((book) => {
-            console.log('book saved', book);
             showSuccessMsg('book saved!')
             navigate('/book')
         })

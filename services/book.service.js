@@ -12,6 +12,7 @@ export const bookService = {
     save,
     getEmptyBook,
     getDefaultFilter,
+    addReview
 }
 
 function query(filterBy = getDefaultFilter()) {
@@ -45,6 +46,14 @@ function save(book) {
     }
 }
 
+function addReview(bookId, review) {
+    return get(bookId).then((book) => {
+        if(!book.reviews) book.reviews = []
+        book.reviews.push(review)
+        save(book)
+    })
+}
+
 function getEmptyBook(title = '', thumbnail = '') {
     return {
         id: '',
@@ -62,11 +71,6 @@ function getDefaultFilter() {
 function _createBooks() {
     let books = utilService.loadFromStorage(BOOK_KEY)
     if (!books || !books.length) {
-        // books = []
-        // books.push(_createBook('macarons', 'macarons'))
-        // books.push(_createBook('patisserie', 'patisserie'))
-        // books.push(_createBook('cake bible', 'cake-bible'))
-        // books.push(_createBook('100 cookies', '100-cookies'))
         books = [
             {
                 "id": "OXeMG8wNskc",

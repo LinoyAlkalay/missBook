@@ -44,7 +44,6 @@ export function BookIndex() {
         <div className="main-layout">
             <BookFilter onSetFilter={onSetFilter} />
             <div className="book-container main-layout full">
-                <Link to="/book/edit">Add Book!</Link>
                 {!isLoading && <BookList books={books} onRemoveBook={onRemoveBook} />}
                 {isLoading && <div>Loading...</div>}
                 {!books.length && <div>No items to show...</div>}
