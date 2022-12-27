@@ -14,14 +14,17 @@ export function BookReview() {
         value = type === 'range' ? +value : value
         setReveiw(prevReview => ({ ...prevReview, [field]: value }))
     }
-    
+
     function onAddReview(ev) {
         ev.preventDefault()
-        bookService.addReview(bookId, reveiw).then(() => {
-            showSuccessMsg('book reviewed!')
-            navigate('/book')
-        })
+        bookService.addReview(bookId, reveiw)
+            .then(() => {
+                showSuccessMsg('book reviewed!')
+                navigate('/book')
+            })
     }
+
+    // !add id to the review!
 
     return <section className="book-review">
         <h2>Review this book!</h2>

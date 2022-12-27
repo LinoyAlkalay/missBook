@@ -32,10 +32,11 @@ export function BookEdit() {
 
     function onSaveBook(ev) {
         ev.preventDefault()
-        bookService.save(bookToEdit).then((book) => {
-            showSuccessMsg('book saved!')
-            navigate('/book')
-        })
+        bookService.save(bookToEdit)
+            .then((book) => {
+                showSuccessMsg('book saved!')
+                navigate('/book')
+            })
     }
 
     return <section className="book-edit">

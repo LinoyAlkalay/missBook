@@ -5,12 +5,14 @@ import { LongTxt } from "../cmps/long-txt.jsx"
 import { BookDate } from "../cmps/book-date.jsx"
 import { BookPrice } from "../cmps/book-price.jsx"
 import { PageCountReading } from "../cmps/page-count.jsx"
+import { StarRating } from "../cmps/star-rating.jsx"
 
 import { bookService } from "../services/book.service.js"
+import { showErrorMsg } from "../services/event-bus.service.js"
 
 export function BookDetails() {
     const [book, setBook] = useState(null)
-    const params = useParams()
+    const { bookId } = useParams()
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -18,10 +20,10 @@ export function BookDetails() {
     }, [])
 
     function loadBook() {
-        bookService.get(params.bookId)
+        bookService.get(bookId)
             .then((book) => setBook(book))
             .catch((err) => {
-                console.log('Had issues in book details', err)
+                showErrorMsg('Had issues in book details')
                 navigate('/book')
             })
     }
@@ -48,13 +50,19 @@ export function BookDetails() {
                 <p>Categories:
                     {book.categories.map(categorie => <span key={categorie}> {categorie} </span>)}
                 </p>
-                <button onClick={onGoBack}>Go Back</button>
+                <button onClick={onGoBack}>Go Back</button> {/* use link insted btn */}
                 <Link to={`/book/edit/${book.id}`}>Edit me</Link>
                 <Link to={`/book/${book.id}/review/`}>Review</Link>
             </div>
         </div>
         <ul className="reviews-list">
-            {book.reviews && book.reviews.map(review => <li key={review.fullname}> {review.fullname} {review.rate} {review.readAt}</li>)}
+            {book.reviews && book.reviews.map(review =>
+                <li key={review.fullname}>
+                    {review.fullname}
+                    <StarRating />
+                    {review.rate}
+                    {review.readAt}
+                </li>)}
         </ul>
     </section>
 }

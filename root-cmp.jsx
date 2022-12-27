@@ -11,16 +11,13 @@ import { Home } from "./views/home.jsx"
 import { UserMsg } from './cmps/user-msg.jsx'
 
 export function App() {
-
     return <Router>
         <section className="app">
             <AppHeader />
-
             <main>
                 <Routes>
                     <Route element={<Home />} path="/" />
                     <Route element={<About />} path="/about" />
-
                     <Route element={<BookIndex />} path="/book" />
                     <Route element={<BookEdit />} path="/book/edit" />
                     <Route element={<BookEdit />} path="/book/edit/:bookId" />
@@ -28,7 +25,6 @@ export function App() {
                     <Route element={<BookReview />} path="/book/:bookId/review" />
                 </Routes>
             </main>
-
             <UserMsg />
         </section>
     </Router>
