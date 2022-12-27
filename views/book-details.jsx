@@ -12,20 +12,26 @@ import { showErrorMsg } from "../services/event-bus.service.js"
 
 export function BookDetails() {
     const [book, setBook] = useState(null)
+    const [nextBookId, setNextBookId] = useState(null)
+    const [prevBookId, setPrevBookId] = useState(null)
     const { bookId } = useParams()
     const navigate = useNavigate()
 
     useEffect(() => {
         loadBook()
-    }, [])
+    }, [bookId])
 
     function loadBook() {
         bookService.get(bookId)
             .then((book) => setBook(book))
-            .catch((err) => {
+            .catch(() => {
                 showErrorMsg('Had issues in book details')
                 navigate('/book')
             })
+        bookService.getNextBookId(bookId)
+            .then(setNextBookId)
+        bookService.getPrevBookId(bookId)
+            .then(setPrevBookId)
     }
 
     function onGoBack() {
@@ -55,6 +61,9 @@ export function BookDetails() {
                 <Link to={`/book/${book.id}/review/`}>Review</Link>
             </div>
         </div>
+        <Link to={`/book/${nextBookId}`}>Next book</Link>
+        <Link to={`/book/${prevBookId}`}>Prev book</Link>
+        {/* make a new cmp! */}
         <ul className="reviews-list">
             {book.reviews && book.reviews.map(review =>
                 <li key={review.fullname}>
