@@ -4,6 +4,7 @@
 
 .book-filter {
     display: flex;
+    flex-direction: column-reverse;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1em;
@@ -31,4 +32,12 @@
     font-size: 1.1rem;
     border-bottom-right-radius: .5em;
     border-top-right-radius: .5em;
+}
+
+@media (min-width: 550px) {}
+
+@media (min-width: 1200px) {
+    .book-filter {
+        flex-direction: row;
+    }
 }

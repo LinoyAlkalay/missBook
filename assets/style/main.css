@@ -10,6 +10,8 @@
 
 /* Views */
 @import 'views/home.css';
+@import 'views/about.css';
+@import 'views/book-add.css';
 
 /* Components */
 @import 'cmps/app-header.css';
@@ -20,4 +22,6 @@
 @import 'cmps/book-details.css';
 @import 'cmps/book-price.css';
 @import 'cmps/long-txt.css';
+@import 'cmps/reviews-preview.css';
+@import 'cmps/book-review.css';
 @import 'cmps/user-msg.css';

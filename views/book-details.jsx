@@ -5,7 +5,7 @@ import { LongTxt } from "../cmps/long-txt.jsx"
 import { BookDate } from "../cmps/book-date.jsx"
 import { BookPrice } from "../cmps/book-price.jsx"
 import { PageCountReading } from "../cmps/page-count.jsx"
-import { StarRating } from "../cmps/star-rating.jsx"
+import { ReviewsPreview } from "../cmps/reviews-preview.jsx"
 
 import { bookService } from "../services/book.service.js"
 import { showErrorMsg } from "../services/event-bus.service.js"
@@ -61,17 +61,8 @@ export function BookDetails() {
                 <Link to={`/book/${book.id}/review/`}>Review</Link>
             </div>
         </div>
-        <Link to={`/book/${nextBookId}`}>Next book</Link>
+        <ReviewsPreview book={book}/>
         <Link to={`/book/${prevBookId}`}>Prev book</Link>
-        {/* make a new cmp! */}
-        <ul className="reviews-list">
-            {book.reviews && book.reviews.map(review =>
-                <li key={review.fullname}>
-                    {review.fullname}
-                    <StarRating />
-                    {review.rate}
-                    {review.readAt}
-                </li>)}
-        </ul>
+        <Link to={`/book/${nextBookId}`}>Next book</Link>
     </section>
 }
