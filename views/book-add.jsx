@@ -4,7 +4,7 @@ const { useState, useEffect } = React
 import { BookGoogleList } from "../cmps/book-google-List.jsx"
 import { BookGoogleFilter } from "../cmps/book-google-filter.jsx"
 import { googleBookService } from "../services/google-book.service.js"
-import { showSuccessMsg } from "../services/event-bus.service.js"
+import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service.js"
 
 export function BookAdd() {
 
@@ -42,6 +42,9 @@ export function BookAdd() {
             .then(() => {
                 showSuccessMsg('book added!')
                 navigate('/book')
+            })
+            .catch(() => {
+                showErrorMsg('you already add this book!')
             })
     }
 

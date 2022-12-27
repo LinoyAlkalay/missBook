@@ -734,12 +734,11 @@ const googleBooks = [
 
 function query(txt) {
     let books = googleBooks[0].items.map(book => {
-        const obj = {
+        return {
             id: book.id,
             title: book.volumeInfo.title,
             subtitle: book.volumeInfo.subtitle,
         }
-        return obj
     })
     if (txt) {
         const regex = new RegExp(txt, 'i')
@@ -776,6 +775,15 @@ function addGoogleBook(googleBook) {
         }
     }
 
-    // the function add the convert book to the DB
-    return storageService.post(BOOK_KEY, formatedBook)
+    return storageService.query(BOOK_KEY)
+        .then(books => {
+            console.log('books:', books)
+            const isBookExisting = books.find(book => book.id === formatedBook.id)
+            console.log('formatedBook.id:', formatedBook.id)
+            if (!isBookExisting) {
+                return storageService.post(BOOK_KEY, formatedBook)
+            } else {
+                if (isBookExisting) throw new Error(`you already add this book`)
+            }
+        })
 }
